@@ -1,47 +1,101 @@
-//display a start button
-//const startDiv = $("<div class='start'>");
-//startDiv.text("Start");
 
-//question variables
 
-const question = ["Does Sora have a Nobody?", "Is Xemnas Anesm's Nobody?", "Is Sora a keyblade master?"];
+
+$("#start-alert").on("click", start);
+
+$("#timer").text("00:15");
+
+$("#sub-btn").on("click", done);
+
+
+let time = 15;
 let intervalId;
 let clockRunning = false;
-let time = 10;
+let right = 0;
+let wrong = 0;
+/*const interval = setInterval(function(){
+  // document.getElementById('count').innerHTML=count;
+  $("#timer").innerHTML=count
+  count--;
+  if (count === 0){
+    clearInterval(interval);
+    // document.getElementById('count').innerHTML='Done';
+    $("#timer").innerHTML='Done'
+    // or...
+    alert("You're out of time!");
+  }
+}, 1000);*/
 
-/* const question1 = "Does Sora have a Nobody?";
-const question2 = "Is Xemnas Anesm's Nobody?";
-const question3 = "Is Sora a keyblade master?"; */
+console.log(time);
 
-//on click of start button, display questions and start timer
-$("#start-alert").on("click", function() {
-$("#start-alert").empty();
+function done() {
 
-$("#timer").append("00:10");
-  
-/* for (i = 0; i < questions.length; i++) {
-  $("#questions").append("<h2>" + questions[i] + "<h2>") 
-  $("#questions").append("<input id='q11' class='yes' type='radio' value='true'> True  " + "<input id='q12' class='no' type='radio' value='false'> False") 
-} */
 
-$(".questions").append("<h2>" + question[1] + "<h2>")
-$(".questions").append("<h2>" + question[2] + "<h2>")
-$(".questions").append("<h2>" + question[3] + "<h2>") 
 
-});
+}
 
-/*function done() {
-  if 
-}*/
 
-const subBtn = $("<button>");
-subBtn.addClass("end").attr("type='submit");
-$(".idk").append(subBtn);
 
-$(subBtn).on("click", function(event) {
-  event.preventDefault();
 
-});
 
-//end game when timer runs out or when done button is clicked
-//display correct answers, wrong answers, and unanswerd 
+
+
+
+
+
+
+//Timer Functions
+
+function start() {
+
+  // DONE: Use setInterval to start the count here and set the clock to running.
+  if (!clockRunning) {
+    intervalId = setInterval(count, 1000);
+    clockRunning = true;
+  }
+
+}
+function stop() {
+
+  clearInterval(intervalId);
+  clockRunning = false;
+}
+
+
+
+
+function count() {
+
+  time--;
+
+  let converted = timeConverter(time);
+  console.log(converted);
+
+  $("#timer").text(converted);
+if (time === 0) {
+  stop();
+}
+}
+
+
+
+
+function timeConverter(t) {
+
+  let minutes = Math.floor(t / 60);
+  let seconds = t - (minutes * 60);
+
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+
+  if (minutes === 0) {
+    minutes = "00";
+  }
+  else if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  return minutes + ":" + seconds;
+}
+

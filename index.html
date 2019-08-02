@@ -1,29 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trivia Game</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" href="assets/css/style.css">
-    
+
 </head>
+
 <body>
     <div class="container">
-        <div id="start-alert">START</div>
+        <div class="jumbotron">
+            <div id="start-alert">
+                <h1>START</h1>
+            </div>
+        </div>
         <div id="timer"></div>
-        <div id="questions"></div>
+        <div id="questions">
+
+            <div class="questions">
+                <p>1. Does Sora have a Nobody?</p>
+                <form class="options">
+                    <input class="option" type="radio" name="question1" value="true">True<br>
+                    <input class="option" type="radio" name="question1" value="false">False<br>
+                </form>
+            </div>
+
+            <div class="questions">
+                <p>2. Is Xemnas Anesm's Nobody?</p>
+                <form class="options">
+                    <input class="option" type="radio" name="question2" value="true">True<br>
+                    <input class="option" type="radio" name="question2" value="false">False<br>
+                </form>
+            </div>
+
+            <div class="questions">
+                <p>3. Is Sora a keyblade master?</p>
+                <form class="options">
+                    <input class="option" type="radio" name="question3" value="true">True<br>
+                    <input class="option" type="radio" name="question3" value="false">False<br>
+                </form>
+            </div>
+            <button type="submit" id="sub-btn">Submit</button>
+
+        </div>
+
         <div class="idk"></div>
     </div>
-    
-    
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+
     <script src="assets/javascript/app.js"></script>
 
 
 </body>
+
 </html>
